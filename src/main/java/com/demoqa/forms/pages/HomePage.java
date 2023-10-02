@@ -13,12 +13,12 @@ public class HomePage extends Form {
     }
 
     private ILink getCard(String cardName) {
-        String xPath = String.format("//h5[contains(text(), '%s')]//ancestor::div[contains(@class, 'top-card')]", cardName);
+        String xPath = String.format("//h5[contains(text(), '%s')]//parent::div[contains(@class, 'card-body')]", cardName);
         return getElementFactory().getLink(By.xpath(xPath), cardName);
     }
 
     public void clickCardByName(String cardName){
-        getCard(cardName).click();
+        getCard(cardName).getJsActions().click();
     }
 
 }

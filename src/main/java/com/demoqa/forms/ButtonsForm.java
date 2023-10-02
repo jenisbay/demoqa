@@ -38,7 +38,7 @@ public class ButtonsForm extends Form {
     }
 
     public void clickClickMeBtn(){
-        clickMeBtn.getMouseActions().click();
+        clickMeBtn.getJsActions().click();
     }
 
     public String fetchDoubleClickMessageText(){

@@ -23,12 +23,12 @@ public class RadioButtonForm extends Form {
     }
 
     public void clickYes(){
-        yesRadio.click();
+        yesRadio.getJsActions().click();
         selected = yesRadio;
     }
 
     public void clickImpressive(){
-        impressiveRadio.click();
+        impressiveRadio.getJsActions().click();
         selected = yesRadio;
     }
 

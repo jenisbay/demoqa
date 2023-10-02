@@ -14,6 +14,6 @@ public class UploadAndDownloadPage extends Form {
     }
 
     public void clickDownloadBtn(){
-        downloadButton.click();
+        downloadButton.getJsActions().click();
     }
 }

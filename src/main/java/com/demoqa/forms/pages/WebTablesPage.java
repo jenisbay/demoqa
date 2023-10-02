@@ -14,7 +14,7 @@ public class WebTablesPage extends Form {
     }
 
     public void clickAddBtn(){
-        addBtn.click();
+        addBtn.getJsActions().click();
     }
 
 }

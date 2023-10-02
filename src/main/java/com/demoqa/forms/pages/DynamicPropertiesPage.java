@@ -21,17 +21,17 @@ public class DynamicPropertiesPage extends Form {
 
     public void clickEnableAfterBtn() {
         enableAfter.state().waitForEnabled();
-        enableAfter.click();
+        enableAfter.getJsActions().click();
     }
 
     public void clickColorChangeBtn() {
-        colorChange.click();
+        colorChange.getJsActions().click();
 
     }
 
     public void clickVisibleAfter() {
         visibleAfter.state().waitForDisplayed();
-        visibleAfter.click();
+        visibleAfter.getJsActions().click();
     }
 
 

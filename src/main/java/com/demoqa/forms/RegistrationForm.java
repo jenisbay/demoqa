@@ -58,7 +58,7 @@ public class RegistrationForm extends Form {
     }
 
     public void clickSubmitBtn(){
-        submitBtn.click();
+        submitBtn.getJsActions().click();
     }
 
 }

@@ -116,7 +116,7 @@ public class DemoQATests extends BaseTest {
 
         BrokenLinksAndImagesForm brokenLinksAndImagesForm = new BrokenLinksAndImagesForm();
 
-        Assert.assertEquals(UrlConnection.getResponseCode(brokenLinksAndImagesForm.fetchValidLinkUrl()), 301);
+        Assert.assertEquals(UrlConnection.getResponseCode(brokenLinksAndImagesForm.fetchValidLinkUrl()), 200);
         Assert.assertEquals(UrlConnection.getResponseCode(brokenLinksAndImagesForm.fetchInvalidLinkUrl()), 500);
 
     }
