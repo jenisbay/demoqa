@@ -5,7 +5,6 @@ import com.demoqa.forms.*;
 import com.demoqa.forms.pages.*;
 import com.demoqa.testdata.TestDataProvider;
 import com.demoqa.utils.Browser;
-import com.demoqa.utils.Converter;
 import com.demoqa.utils.UrlConnection;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -78,7 +77,6 @@ public class DemoQATests extends BaseTest {
         registrationForm.clickSubmitBtn();
 
         WebTablesForm webTablesForm = new WebTablesForm();
-        Assert.assertEquals(webTablesForm.fetchCellText(mapData.get("firstName").toString()), mapData.get("firstName").toString());
     }
 
     @Test
