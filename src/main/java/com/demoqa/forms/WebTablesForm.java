@@ -16,8 +16,8 @@ public class WebTablesForm extends Form {
         return getElementFactory().getLabel(By.xpath(xpath), "Cell");
     }
 
-    public String fetchCellText(List<String> list) {
-        return String.format("//div[contains(text(), '%s')]", list.get(0));
+    public String fetchCellText(String value) {
+        return String.format("//div[contains(text(), '%s')]", value);
     }
 
 

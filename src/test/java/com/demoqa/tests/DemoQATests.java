@@ -78,7 +78,7 @@ public class DemoQATests extends BaseTest {
         registrationForm.clickSubmitBtn();
 
         WebTablesForm webTablesForm = new WebTablesForm();
-        Assert.assertEquals(webTablesForm.fetchCellText(listData), Converter.listToString(listData));
+        Assert.assertEquals(webTablesForm.fetchCellText(mapData.get("firstName").toString()), mapData.get("firstName").toString());
     }
 
     @Test
