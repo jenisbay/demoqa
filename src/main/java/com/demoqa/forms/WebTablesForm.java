@@ -17,7 +17,8 @@ public class WebTablesForm extends Form {
     }
 
     public String fetchCellText(String value) {
-        return String.format("//div[contains(text(), '%s')]", value);
+        return getCell(String.format("//div[contains(text(), '%s')]", value)).getText();
+
     }
 
 
