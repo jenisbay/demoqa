@@ -1,0 +1,30 @@
+{
+  "card": {
+    "elements": "Elements",
+    "forms": "Forms",
+    "alert-frame-windows": "Alerts, Frame & Windows",
+    "widgets": "Widgets",
+    "interactions": "Interactions",
+    "book-store-application": "Book Store Application"
+  },
+  "element": {
+    "text-box": "Text Box",
+    "check-box": "Check Box",
+    "radio-button": "Radio Button",
+    "web-tables": "Web Tables",
+    "buttons": "Buttons",
+    "links": "Links",
+    "broken-links-images": "Broken Links - Images",
+    "upload-download": "Upload and Download",
+    "dynamic-properties": "Dynamic Properties"
+  },
+  "messages": {
+    "buttons": {
+      "doubleClick": "You have done a double click",
+      "rightClick": "You have done a right click",
+      "dynamicClick": "You have done a dynamic click"
+    }
+  }
+
+
+}
