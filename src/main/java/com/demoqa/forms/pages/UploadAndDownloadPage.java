@@ -2,18 +2,20 @@ package com.demoqa.forms.pages;
 
 import aquality.selenium.elements.interfaces.IButton;
 import aquality.selenium.forms.Form;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class UploadAndDownloadPage extends Form {
 
-    private final static String downloadButtonXPath = "//a[contains(@id, 'downloadButton')]";
-    private final IButton downloadButton = getElementFactory().getButton(By.xpath(downloadButtonXPath), "Download");
+    private final IButton downloadButton = getElementFactory().getButton(
+            By.xpath("//a[contains(@id, 'downloadButton')]"), "Download");
 
     public UploadAndDownloadPage() {
         super(By.xpath("//div[contains(@id, 'app')]"), "Upload And Download");
     }
 
-    public void clickDownloadBtn(){
+    @Step("Clicking download button")
+    public void clickDownloadBtn() {
         downloadButton.getJsActions().click();
     }
 }
