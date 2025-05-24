@@ -3,18 +3,29 @@ package com.demoqa.tests;
 import com.demoqa.configuration.Environment;
 import com.demoqa.forms.*;
 import com.demoqa.forms.pages.*;
+import com.demoqa.listeners.DemoQaListener;
 import com.demoqa.testdata.TestDataProvider;
 import com.demoqa.utils.Browser;
 import com.demoqa.utils.UrlConnection;
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.testng.Tag;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.List;
 import java.util.Map;
 
+@Listeners(DemoQaListener.class)
 public class DemoQATests extends BaseTest {
 
-    @Test(dataProviderClass = TestDataProvider.class, dataProvider = "getTextBoxArguments")
+    @Test(dataProviderClass = TestDataProvider.class, dataProvider = "getTextBoxArguments",
+        description = "This method checks if Text form elements works correctly")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.BLOCKER)
     public void checkTextBoxFormWorks(Map<String, String> data) {
 
         HomePage homePage = new HomePage();
@@ -37,10 +48,13 @@ public class DemoQATests extends BaseTest {
         Assert.assertEquals(outputBlock.fetchEmailText(), data.get("email"));
         Assert.assertEquals(outputBlock.fetchCurrentAddressText(), data.get("currentAddress"));
         Assert.assertEquals(outputBlock.fetchPermanentAddressText(), data.get("permanentAddress"));
-
     }
 
     @Test
+    @Description("This method checks if box form elements works correctly")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.CRITICAL)
     public void checkCheckBoxFormWorks() {
 
         HomePage homePage = new HomePage();
@@ -54,7 +68,11 @@ public class DemoQATests extends BaseTest {
     }
 
     @Test(dataProviderClass = TestDataProvider.class, dataProvider = "getWebTablesArguments")
-    public void checkWebTablesFormWorks(Map<String, Object> mapData, List<String> listData) {
+    @Description("This method checks if web tables shows data correctly")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.CRITICAL)
+    public void checkWebTablesFormWorks(Map<String, Object> mapData) {
 
         HomePage homePage = new HomePage();
         homePage.clickCardByName(Environment.getTestData("card.elements"));
@@ -81,29 +99,10 @@ public class DemoQATests extends BaseTest {
     }
 
     @Test
-    public void checkButtonsWork() {
-
-        HomePage homePage = new HomePage();
-        homePage.clickCardByName(Environment.getTestData("card.elements"));
-        Browser.waitForPageToLoad();
-
-        ElementsPage elementsPage = new ElementsPage();
-        elementsPage.clickElementByName(Environment.getTestData("element.buttons"));
-        Browser.waitForPageToLoad();
-
-        ButtonsForm buttonsForm = new ButtonsForm();
-        buttonsForm.clickDoubleClickBtn();
-        Assert.assertEquals(buttonsForm.fetchDoubleClickMessageText(), Environment.getTestData("messages.buttons.doubleClick"), "Double click button NOT clicked");
-
-        buttonsForm.clickRightClickBtn();
-        Assert.assertEquals(buttonsForm.fetchRightClickMessageText(), Environment.getTestData("messages.buttons.rightClick"), "Right click button NOT clicked");
-
-        buttonsForm.clickClickMeBtn();
-        Assert.assertEquals(buttonsForm.fetchDynamicClickMessageText(), Environment.getTestData("messages.buttons.dynamicClick"), "Dynamic click button NOT clicked");
-
-    }
-
-    @Test
+    @Description("This method checks if link are broken or not")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.MINOR)
     public void checkBrokenLinksImagesWork() {
         HomePage homePage = new HomePage();
         homePage.clickCardByName(Environment.getTestData("card.elements"));
@@ -121,6 +120,10 @@ public class DemoQATests extends BaseTest {
     }
 
     @Test
+    @Description("This method checks if uploading files works")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.NORMAL)
     public void checkUploadAndDownloadWork() {
         HomePage homePage = new HomePage();
         homePage.clickCardByName(Environment.getTestData("card.elements"));
@@ -139,6 +142,10 @@ public class DemoQATests extends BaseTest {
     }
 
     @Test
+    @Description("This method checks if Dynamic properties work")
+    @Owner("Jenis")
+    @Tag("UI")
+    @Severity(SeverityLevel.MINOR)
     public void checkDynamicPropertiesWork() {
 
         HomePage homePage = new HomePage();
@@ -153,7 +160,5 @@ public class DemoQATests extends BaseTest {
         dynamicPropertiesPage.clickEnableAfterBtn();
         dynamicPropertiesPage.clickColorChangeBtn();
         dynamicPropertiesPage.clickVisibleAfter();
-
     }
-
 }

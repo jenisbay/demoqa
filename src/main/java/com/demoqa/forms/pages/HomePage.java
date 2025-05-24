@@ -1,12 +1,11 @@
 package com.demoqa.forms.pages;
 
-import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.elements.interfaces.ILink;
 import aquality.selenium.forms.Form;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class HomePage extends Form {
-
 
     public HomePage() {
         super(By.xpath("//div[contains(@id, 'app')]"), "Home Page");
@@ -17,8 +16,8 @@ public class HomePage extends Form {
         return getElementFactory().getLink(By.xpath(xPath), cardName);
     }
 
-    public void clickCardByName(String cardName){
+    @Step("Clicking card by name")
+    public void clickCardByName(String cardName) {
         getCard(cardName).getJsActions().click();
     }
-
 }

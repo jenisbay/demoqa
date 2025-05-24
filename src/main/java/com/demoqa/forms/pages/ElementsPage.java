@@ -1,8 +1,8 @@
 package com.demoqa.forms.pages;
 
-import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.elements.interfaces.ILink;
 import aquality.selenium.forms.Form;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 public class ElementsPage extends Form {
@@ -16,9 +16,8 @@ public class ElementsPage extends Form {
         return getElementFactory().getLink(By.xpath(xPath), elementName);
     }
 
-    public void clickElementByName(String elementName){
+    @Step("Clicking element by name")
+    public void clickElementByName(String elementName) {
         getElement(elementName).getJsActions().click();
     }
-
-
 }

@@ -35,15 +35,7 @@ public class TestDataProvider {
         map.put("salary", faker.number().numberBetween(200000, 300000));
         map.put("department", "Department");
 
-        List<String> list = new ArrayList<>();
-        list.add(map.get("firstName").toString());
-        list.add(map.get("lastName").toString());
-        list.add(map.get("age").toString());
-        list.add(map.get("email").toString());
-        list.add(map.get("salary").toString());
-        list.add(map.get("department").toString());
-
-        return new Object[][]{{map, list}};
+        return new Object[][]{{map}};
 
     }
 

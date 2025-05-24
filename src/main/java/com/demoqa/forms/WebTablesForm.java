@@ -2,9 +2,8 @@ package com.demoqa.forms;
 
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-
-import java.util.List;
 
 public class WebTablesForm extends Form {
 
@@ -16,10 +15,8 @@ public class WebTablesForm extends Form {
         return getElementFactory().getLabel(By.xpath(xpath), "Cell");
     }
 
+    @Step("Fetching cell text")
     public String fetchCellText(String value) {
         return getCell(String.format("//div[contains(text(), '%s')]", value)).getText();
-
     }
-
-
 }
